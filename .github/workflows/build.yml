@@ -69,6 +69,7 @@ jobs:
     env:
       CIBW_ARCHS_LINUX: aarch64
       CIBW_BUILD: ${{matrix.python_tag}}
+      CIBW_BEFORE_ALL: "yum install libblas-devel liblapack-devel"
       CIBW_TEST_REQUIRES: "pytest cvxopt"
       CIBW_TEST_COMMAND: "pytest -s {project}/module/tests -k \"not codegen and not mkl\" "
    
