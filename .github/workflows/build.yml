@@ -40,7 +40,7 @@ jobs:
         CIBW_TEST_REQUIRES: "pytest cvxopt"
         CIBW_TEST_COMMAND: "pytest -s {project}/module/tests -k \"not codegen and not mkl\" "
       run: |
-        python -m pip install cibuildwheel==1.10.1
+        python -m pip install cibuildwheel==1.10.0
         python -m cibuildwheel --output-dir wheelhouse
     
     - uses: docker/setup-qemu-action@v1
